@@ -5,9 +5,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-
+    protected $table = "event";
+    
     protected $fillable = [
-        'title', 'img_featured', 'description', 'resume', 'date_start', 'created_at', 'updated_at'
+        'name', 'img_featured', 'description', 'resume', 'date_start', 'created_at', 'updated_at'
     ];
 
 }
