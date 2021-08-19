@@ -1,0 +1,54 @@
+version: "3.1"
+services:
+
+    gran_mysql:
+      image: mysql:5.7
+      container_name: gran_mysql
+      restart: unless-stopped
+      tty: true
+      volumes:
+        - database:/var/lib/mysql/
+      environment:
+        - MYSQL_ROOT_PASSWORD=root-pass
+        - MYSQL_DATABASE=gran_api
+        - MYSQL_USER=user
+        - MYSQL_PASSWORD=pass
+      ports:
+        - "8083:3306"
+      networks:
+        - api_gran
+
+    gran_nginx:
+      image: nginx:alpine
+      container_name: gran_nginx
+      restart: unless-stopped
+      tty: true
+      working_dir: /application
+      volumes:
+        - ./src:/application
+        - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+        - "8080:80"
+      links:
+        - gran_mysql
+      networks:
+        - api_gran
+
+    api_gcursos:
+      build: .
+      container_name: api_gcursos
+      restart: unless-stopped
+      tty: true
+      working_dir: /application
+      volumes:
+        - ./src:/application
+      networks:
+        - api_gran
+
+networks:
+  api_gran:
+    driver: bridge
+
+volumes:
+  database:
+    driver: local
