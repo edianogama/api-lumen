@@ -21,10 +21,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('register', 'Api\AuthController@register');
     $router->post('login', 'Api\AuthController@login');
 
-    // Matches "/api/news - public
+    // "/api/news - public
     $router->get('news', 'Api\NewsController@index');
 
-    // Matches "/api/news - private
-    $router->get('events', 'Api\EventController@index');
+    //"/api/news - private
+    $router->get('events', ['middleware' => 'auth', 'uses'  => 'Api\EventController@index']);
 
  });
