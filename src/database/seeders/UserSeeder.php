@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         $plainPassword = 'senha22';
         
         User::create([
-            'email' => 'new@grancursos.com',
+            'username' => 'flamma',
             'password' =>  app('hash')->make($plainPassword),
         ]);
     }
