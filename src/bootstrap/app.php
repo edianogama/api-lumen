@@ -95,6 +95,8 @@ $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Providers\AuthServiceProvider::class);
 $app->register(App\Providers\EventServiceProvider::class);
 
+$app->register(Laravel\Socialite\SocialiteServiceProvider::class);
+$app->configure('services');
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 
 /*

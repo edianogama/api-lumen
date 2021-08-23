@@ -20,6 +20,9 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('register', 'Api\AuthController@register');
     $router->post('login', 'Api\AuthController@login');
+    $router->get('me', 'Api\AuthController@me');
+
+    $router->post('auth/facebook','Api\AuthController@facebookSignin');
 
     // "/api/news - public
     $router->get('news', 'Api\NewsController@index');
