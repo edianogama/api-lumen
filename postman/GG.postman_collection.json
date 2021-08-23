@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "6e9d46cd-4598-41cd-80cc-6a0fce8ae95a",
+		"name": "GG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "douglas@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "email@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "senha22",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "News data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/news",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4MFwvYXBpXC9sb2dpbiIsImlhdCI6MTYyOTQxNzU5NSwiZXhwIjoxNjI5NDIxMTk1LCJuYmYiOjE2Mjk0MTc1OTUsImp0aSI6IlQ5czVYUktnNEdEZUp0Q1MiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kn3PjsUKVAoMAid4ZHO1hVQO_zzWGH9VdoX9eU7ReVY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fbLogin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "douglas@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "EAAEtoBJR1WsBAO3YBijTuZCERVApELUXYsDmZA8UHTTDYdc3nxp6lBjoHJPo1hc6ccBUl988r1QJd2ZBKaHTdMzgUFaP992q624s345Slo8ZAtSFpY5hEQ4zkPZAqR1PqyuPqlKyiUZBAahxwLltLIp3yAnvFKzsIPQuWQZA9wbd88Mj68ZBciadZBLVX83rFHyte7uBIWZAkdj2JvPOiZAcWSNXhpZBken8EwNDaamVqxapvgZDZD",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "senha22",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/facebook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"facebook"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
